@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Interactive Meanshift Clustering</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <style>
+
+  </style>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv='expires' content='0'>
+  <meta http-equiv='pragma' content='no-cache'>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+
+
+  <title>Interactive Meanshift Clustering</title>
+  <!-- Own css -->
+  <link href="leafStyles.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-transparent fixed-top border">
+    <div class="container">
+      <a class="navbar-brand " href="index.html">Interactive Meanshift Clustering</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="about.html">Acerca</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href=" {% url 'dataprocessing' %}">Procesamiento</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'visualization' %}">Visualización</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Estudios</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="contact.html">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="legend" id="legend">
+    <div class="info-legend" id="info-legend">
+      
+    
+    </div>
+  </div>
+
+  <div class="options" id="options">
+    <div class="containerOptions" id="containerOptions">
+
+      <input type="checkbox" id="toggle">
+      <label for="toggle" class="button"></label>
+
+      <nav class="navi" id="navi" style="padding-top: 16px;">
+
+        <div class="d-inline-flex" style="padding-bottom: 2px; padding-left: 10px;">
+          <div class="p-2 bd-highlight">
+            <label for="slider-sphere-radius">Sphere radius</label>
+            <div class="d-inline-flex bd-highlight">
+              
+              <span class="font-weight-bold text-primary mx-2 valueSpan3">-</span>
+              
+              <input type="range" class="custom-range" value ="0.1"  min="0.005" max="1.2" step="0.005";  id="slider-sphere-radius">
+              <div id="select-value"></div>
+              <span class="font-weight-bold text-primary mx-2 valueSpan3">+</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-inline-flex" style="padding-bottom: 2px;  padding-left: 10px;">
+          <div class="p-2 bd-highlight">
+            <div class="d-inline-flex bd-highlight">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="lines-check">
+                <label class="form-check-label" for="lines-check">Lines</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-inline-flex" style="padding-bottom: 2px;  padding-left: 15px;">
+          <div class="p-2 bd-highlight">
+            <div class="d-inline-flex bd-highlight">
+              <div class="form-check" style="align-content: flex-end;">
+                <input class="form-check-input" type="checkbox" id="leafs-check" checked>
+                <label class="form-check-label" for="leafs-check">Leaf</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-inline-flex" style="padding-bottom: 2px;  padding-left: 10px;">
+          <div class="p-2 bd-highlight">
+            <div class="d-inline-flex bd-highlight">
+              <div class="form-check" style="align-content: flex-end;">
+                <input class="form-check-input" type="checkbox" id="sphere-check" checked>
+                <label class="form-check-label" for="sphere-check">Sphere</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-inline-flex" style="padding-bottom: 2px;  padding-left: 10px;">
+          <div class="p-2 bd-highlight">
+            <div class="d-inline-flex bd-highlight">
+              <div class="form-check" style="align-content: flex-end;" id="convex-div">
+                <input class="form-check-input" type="checkbox" id="convex-check">
+                <label class="form-check-label" for="convex-check">Convexhull</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-inline-flex" style="padding-bottom: 2px; padding-left: 10px;">
+          <div class="p-2 bd-highlight">
+            <label for="slider-sheet-size">Sheet size</label>
+            <div class="d-inline-flex bd-highlight">
+              <span class="font-weight-bold text-primary mx-2 valueSpan4">-</span>
+              <input type="range" class="custom-range" value ="0.5"  min="0.1" max="1" step="0.01"; id="slider-sheet-size">
+              <span class="font-weight-bold text-primary mx-2 valueSpan4">+</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-inline-flex" style="padding-bottom: 2px;  padding-left: 10px;">
+          <div class="p-2 bd-highlight">
+            <div class="d-inline-flex bd-highlight">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="confusion-check">
+                <label class="form-check-label" for="confusion-check">Confusion matrix</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-inline-flex" style="padding-bottom: 2px;  padding-left: 10px;">
+          <div class="p-2 bd-highlight">
+            <div class="d-inline-flex bd-highlight">
+              <div class="form-check" style="align-content: flex-end;">
+                <input class="form-check-input" type="checkbox" id="persistance-check">
+                <label class="form-check-label" for="persistance-check">Persistence graphic</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-inline-flex" style="padding-bottom: 0px;  padding-left: 10px;">
+          <div class="p-2 bd-highlight">
+            <div class="d-inline-flex bd-highlight">
+              <div class="form-check" style="align-content: flex-end;">
+                <input class="form-check-input" type="checkbox" id="dots-check">
+                <label class="form-check-label" for="dots-check">Dots graphic</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-inline-flex" style="padding-bottom: 15px;  padding-left: 0px;">
+          <div class="p-2 bd-highlight" style="display: none;" id="div-features">
+            <div class="d-inline-flex bd-highlight">
+              <div class="form-check" style="align-content: flex-end; padding-left: 10px">
+                <label class="form-check-label" for="dots-check" style="padding-bottom: 12px">Convexhull features</label>
+                <select class="form-control form-control-sm" id="features" style="width:145px;">
+                </select>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--<a href="#">Other options</a>-->
+      </nav>
+
+    </div>
+  </div>
+  <input type="hidden" id="current_studio" name="current_studio" value="{{current_studio}}">
+  <form action="/view_studio/" method="get" enctype="multipart/form-data" name="form_view_studio">
+    
+  </form>
+  <div class="info2">
+    <div id="container2" style="min-width: 310px; height: 300px; max-width: 700px; margin: 0 auto"></div>
+  </div>
+  <div id="canvas"></div>
+  <div id="container"></div>
+  <div id="topmenu">
+    <button id="up_rad">Rad++</button>
+    <button id="dw_rad">Rad--</button>
+    <button id="leaf">Leaf</button>
+    <button id="lx">Lines</button>
+    <label id="h0" class="labelGroups">H0 180</label>
+  </div>
+  <script src="../three.js/build/three.js"></script>
+  <script src="../three.js/examples/js/controls/TrackballControls.js"></script>
+  <script src="../three.js/examples/js/QuickHull.js"></script>
+  <script src="../three.js/examples/js/geometries/ConvexGeometry.js"></script>
+  <script src="../three.js/examples/js/libs/stats.min.js"></script>
+  <script src="features.js"></script>
+  <script src="treeMew20.js"></script>
+  <script src="visualization.js"></script>  
+  
+
+  <script>
+
+    init();
+
+    function init() {
+      startVisualization();
+    }
+  </script>
+  
+  <script src="controls.js"></script>
+  <!-- Footer -->
+  <footer class="py-3 bg-transparent fixed-bottom border">
+    <div class="container">
+      <p class="m-0 text-center text-black-50">Copyright &copy; Jorge Victorino - Darwin Martínez - Miguel Barrero</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
