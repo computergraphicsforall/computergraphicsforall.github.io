@@ -493,7 +493,7 @@ function drawVectorField (dataX, dataY) {
 function drawWindParticleSystem (dataX, dataY) {
 
     return new Promise (function (resolve, reject){
-        var texture = new THREE.TextureLoader().load("./textures/bolitadeformadita.png");
+        var texture = new THREE.TextureLoader().load("bolitadeformadita.png");
         let particles = new THREE.Geometry();
         let particlesMaterial = new THREE.PointsMaterial({color:0x2697F6, size: 0.18, map: texture, opacity: 1, sizeAttenuation: true, blending: THREE.AdditiveBlending, depthWrite: false});
 
