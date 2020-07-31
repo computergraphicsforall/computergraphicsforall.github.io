@@ -1,0 +1,46 @@
+.prof {
+    text-align: center;
+    font-size: 20px;
+}
+
+.email {
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+    display: block;
+}
+
+.instituciones {
+    text-align: center;
+    font-size: 24px;
+    display: block;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 10px;
+}
+
+li::before {
+    content: "\2022"; /* Insertamos el marcador */
+    padding-right: 8px; /* Establecemos el espacio entre las viñetas y el list item */
+    color: rgb(50, 67, 224); /* Coloreamos la viñeta */
+}
+
+.agenda {
+    text-align: left;
+    font-size: 24px;
+    display: block;
+    list-style: disc;
+}
+.subtema {
+    text-align: center;
+    font-size: 20px;
+    display: block;
+}
+
+.texto-uno {
+    text-align: justify;
+    font-size: 22px;
+    display: block;
+}
