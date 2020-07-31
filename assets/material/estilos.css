@@ -68,3 +68,8 @@ li::before {
     float: right;
     width: 50%;
 }
+.link-ref {
+    text-align: justify;
+    font-size: 18px;
+    display: block;
+}

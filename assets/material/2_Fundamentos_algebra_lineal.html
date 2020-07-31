@@ -49,8 +49,8 @@
                     <li class="agenda"><a href="#subespacio">Sub espacios vectoriales</a></li>
                     <li class="agenda"><a href="#comblineal">Combinación lineal</a></li>
                     <li class="agenda"><a href="#dep-indep-lineal">Dependencia e independencia lineal</a></li>
-                    <li class="agenda"><a href="">Conjunto generador y base</a></li>
-                    <li class="agenda"><a href="">Referencias</a></li>
+                    <li class="agenda"><a href="#conj-gen-base">Conjunto generador y base</a></li>
+                    <li class="agenda"><a href="#ref">Referencias</a></li>
                 </ul>
             </section>
 
@@ -126,21 +126,65 @@
                     </p> 
                 </section>
                 <section>
-                    <h6 class="titulo">Ejemplos</h5>
+                    <h5 class="titulo">Ejemplos</h5>
                         <div class="contenedor-izquierdo">    
-                            <p class="texto2">
-                                Ahora considere los vectores de la gráfica. Si se tienen dos vectores $v_1$ y $v_2$ en 2D, se dice que son LD si y solo si uno de ellos es un múltiplo escalar del otro [Isabel Pustilnik, 2017].
-                                $v_1$ y $v_2$ son LD si y solo si uno de ellos es un múltiplo escalar del otro [Isabel Pustilnik, 2017].
+                            <p class="texto-22">
+                                Si se tienen dos vectores $v_1$ y $v_2$ en <strong>2D</strong>, se dice que son <strong>LD</strong> si y solo si uno de ellos es un múltiplo escalar del otro [Isabel Pustilnik, 2017].
+                            </p>
+                            <p class="texto-22">
+                                Entonces se puede afirmar que dos vectores en $R^{2}$ y $R^{3}$ son LD si y sólo si están sobre la misma recta que pasa por el origen (vectores paralelos).
                             </p>
                         </div>
                         <div class="contenedor-derecho">
-
+                            <iframe src="https://www.geogebra.org/graphing/hqaktxth?embed" width="800" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                        </div>
+                </section>
+                <section>
+                    <h5 class="titulo">Ejemplos</h5>
+                        <div class="contenedor-izquierdo">    
+                            <p class="texto-22">
+                                En $R^{3}$, tres vectores $v_1$, $v_2, v_3$ son <strong>LD</strong> si y sólo si están ubicados en el mismo plano (coplanares).
+                            </p>
+                            <iframe src="https://www.geogebra.org/3d/tj5s27pr?embed" width="800" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                        </div>
+                        <div class="contenedor-derecho">
+                            <p class="texto-22">
+                                 Tres vectores $\vec{u}, \vec{v}, \vec{w}$ en $R^{3}$ que son <strong>LI</strong>.
+                            </p>
+                            </br>
+                            <iframe src="https://www.geogebra.org/3d/g8f8qee9?embed" width="800" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
                         </div>
                 </section>
             </section>
-            <section>
+            <section id="conj-gen-base">
+                <h5 class="titulo">Conjunto generador y base</h5>
+                <p class="texto-22">
+                    Sea $\left\lbrace v_1, v_2, v_3,...v_r\right\rbrace$ un conjunto de vectores de un espacio vectorial $V$; si 
+                    todo vector de $V$ puede expresarse como una combinación lineal de $ v_1, v_2,...,v_r$ 
+                    entonces se dice que $\left\lbrace v_1, v_2, v_3,...v_r\right\rbrace$ es un <strong>conjunto generador de $V$</strong> o que también  $ v_1, v_2,...,v_r$ generan $V$.
+                </p>
+                </br>
+                <span class="texto-22">
+                    Una base es un conjunto B del espacio vectorial V si se cumplen las siguientes condiciones:
+                </span>
+                </br>
+                <div class="block-items-math">
+                    <ul>
+                        <li class="block-items-math">Todos los elementos de B pertenecen al espacio vectorial $V$.</li>
+                        <li class="block-items-math">Los elementos de B forman un sistema linealmente independiente.</li>
+                        <li class="block-items-math">Todo elemento de $V$ se puede escribir como combinación lineal de los elementos de la base B (es decir, B es un sistema generador de $V$).</li>
+                    </ul>
+                </div>
 
             </section>
+            <section id="ref">
+                <h5 class="titulo">Referencias</h5>
+                <p class="texto-22">ISABEL PUSTILNIK, FEDERICO GÓMEZ. Universidad Tecnológica Nacional, F. R. B. A. (2017). Conjunto generador.li y ld. base. dimensión.</p>
+                <a class="link-ref" href="https://aga.frba.utn.edu.ar/conjunto-generador-li-y-ld-base-dimension/">https://aga.frba.utn.edu.ar/conjunto-generador-li-y-ld-base-dimension/</a>
+                <p class="texto-22">ISABEL PUSTILNIK, FEDERICO GÓMEZ. Universidad Tecnológica Nacional, F. R. B. A. (2017). Conjunto generador. Espacios vectoriales</p>
+                <a class="link-ref" href="https://aga.frba.utn.edu.ar/conjunto-generador-li-y-ld-base-dimension/">https://aga.frba.utn.edu.ar/conjunto-generador-li-y-ld-base-dimension/</a>
+            </section>
+
         </div>
     </div>
     <script src="reveal.js-master/dist/reveal.js"></script>
