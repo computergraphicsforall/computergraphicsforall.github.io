@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="estilos.css"/>
 </head>
 
-<body>
+<body id="presentation">
     <div class="reveal">
         <div class="slides">
 
@@ -44,150 +44,210 @@
                 <h4>Agenda</h4>
                 </br>
                 <ul>
-                    <li class="agenda"><a href="#defvector">Vectores en 2 dimensisones</a></li>
+                    <li class="agenda"><a href="#vec2d">Vectores en 2 dimensisones</a></li>
                     <ul>
-                        <li class="agenda"></li>
+                        <li class="agenda"><a href="#mul-escalar">Múltiplo escalar</a></li>
+                        <li class="agenda"><a href="#vec-pos">Vector posición</a></li>
+                        <li class="agenda"><a href="#mag-vector">Magnitud de un vector</a></li>
+                        <li class="agenda"><a href="#vec-unitario">Vector unitario</a></li>
                     </ul>
-                    <li class="agenda"><a href="#evectoriales">Espacios vectoriales</a></li>
-                    <li class="agenda"><a href="#subespacio">Sub espacios vectoriales</a></li>
-                    <li class="agenda"><a href="#comblineal">Combinación lineal</a></li>
-                    <li class="agenda"><a href="#dep-indep-lineal">Dependencia e independencia lineal</a></li>
-                    <li class="agenda"><a href="#conj-gen-base">Conjunto generador y base</a></li>
+                    <li class="agenda"><a href="#vec3d">Vectores en 3 dimensiones</a></li>
+                    <ul>
+                        <li class="agenda"><a href="#dist-puntos">Distancia entre puntos</a></li>
+                    </ul>
+                    <li class="agenda"><a href="#gen-3d">Generalidades pra tres dimensiones</a></li>
                     <li class="agenda"><a href="#ref">Referencias</a></li>
                 </ul>
             </section>
 
-            <section id="defvector">
-                <h5 class="titulo">Definición de vector</h5>
-                <p class="texto-22">Es un segmento de recta contado a partir de un punto en el espacio. Su longitud a escala representa: una magnitud, una dirección y un sentido que puede ser representado en 2 o 3 dimensiones.</p>
-                <iframe src="https://www.geogebra.org/3d/ecgwk7et?embed" width="400" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
-                <iframe src="https://www.geogebra.org/3d/a5pvgd2t?embed" width="400" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
-                
-            </section>
-            <section id="evectoriales">
-                <h5 class="titulo">Espacios vectoriales</h5>
-                <p class="texto-22"> Un espacio vectorial es un conjunto no vacío $V$ de objetos, llamados 
-                <strong>vectores</strong> en el que se ha definido dos operaciones: <strong>la suma</strong> y el <strong>producto por un escalar</strong> (número real) y que se encuentran sujetos a los siguientes axiomas.</p> 
-                <div class="block-items-math">
-                    <ul>
-                        <li class="block-items-math">$u+v = v+u$</li>
-                        <li class="block-items-math">$u+v \in V$</li>
-                        <li class="block-items-math">$(u+v)+w = u+(v+w)$</li>
-                        <li class="block-items-math">Existe un vector nulo $0_v\in V $ tal que $ v+0_v = v$</li>
-                        <li class="block-items-math">Para cada $v$ en $V$, existe un opuesto $(-v)\in V$ tal que $v+(-v)= 0_v$</li>
-                        <li class="block-items-math">$\alpha v \in V$</li>
-                        <li class="block-items-math">$\alpha (u+v) = \alpha u + \alpha v$</li>
-                        <li class="block-items-math">$(\alpha + \beta)v = \alpha v + \beta v$</li>
-                        <li class="block-items-math">$\alpha (\beta v) = (\alpha \beta)v$</li>
-                        <li class="block-items-math">$1v = v$</li>
-                    </ul>
-                </div>
-            </section>
-            <section id="subespacio">
-                <h5 class="titulo">Sub espacios vectoriales</h5>
-                <p class="texto-22">Sea $V$ un espacio vectorial y $W$ un subconjunto no vacío de $V$. $W$ es un <strong>sub espacio</strong> de $V$</p>
-                </br>
-                <div class="block-items-math">
-                    <ul>
-                        <li class="block-items-math">si $u,v \in W$, entonces $u+v \in W$</li>
-                        <li class="block-items-math">si $a \in V$ y $u \in W$, entonces $au \in W $</li>
-                    </ul>
-                </div>
-                </br>
-                <p class="texto-22">Ejemplo: $W=\left\lbrace(x,y)\in R^{2} / x=0\right\rbrace$</p>
-            </section>
-
-            <section id="comblineal">
-                <h5 class="titulo">Combinación lineal</h5>
-                <div>
-                    <div class="contenedor-izquierdo">
-                        <p class="texto-22">Sean $v_1, v_2, v_3,...v_r$ de un espacio vectorial $V$; se dice que $w$ es una combinación lineal de los vectores  $v_1, v_2, v_3,...v_r$ si:</p>
-                        <span class="texto-22">$$w= k_1v_1+k_2v_2+...k_rv_r$$</span>
-                        <p class="texto-22">Donde $k_1,k_2,...k_r$ son escalares.</p>
-                        <p class="texto-22"> <strong>Ejemplo:</strong>¿El vector $(1,0,4)$ sería una combinación lineal de los vectores $(1,0,1)$ y $(0,0,2)$?</p>
-                    </div>
-                    <div class="contenedor-derecho">
-                        <iframe src="https://www.geogebra.org/3d/y8fsjseh?embed" width="800" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
-                    </div>
-                </div>
-                </br>
-            </section>
-            <section id="dep-indep-lineal">
-                <section>
-                    <h5 class="titulo">Dependencia e independencia lineal</h5>
-                    <p class="texto-22">Un conjunto de vectores $\left\lbrace v_1, v_2, v_3,...v_r\right\rbrace$ de un espacio vectorial $V$ es <strong>dependiente</strong> 
-                        si y solo si al menos uno de los vectores puede expresarse como una combinación lineal del otro. 
-                        Si el conjunto  $\left\lbrace v_1, v_2, v_3,...v_r\right\rbrace$ es linealmente dependiente admite otras soluciones además de la trivial. 
-                        Esto quiere decir que al menos uno de los escalares distinto de cero [Isabel Pustilnik, 2017].
-                    </p>
-                    </br>
-                    <p class="texto-22">
-                        <strong>Ejemplo: </strong>Es el conjunto $\left\lbrace (1,0,0),(0,1,0),(1,1,1)\right\rbrace$ linealmente independiente (LI) o linealmente dependiente (LD)?
-                    </p>
-                    <p class="texto-22">
-                        <strong>Ejemplo: </strong>¿Es el conjunto $\left\lbrace (1,1),(1,-1),(2,0)\right\rbrace$ linealmente independiente (LI) o linealmente dependiente (LD)?
-                    </p> 
-                </section>
-                <section>
-                    <h5 class="titulo">Ejemplos</h5>
-                        <div class="contenedor-izquierdo">    
-                            <p class="texto-22">
-                                Si se tienen dos vectores $v_1$ y $v_2$ en <strong>2D</strong>, se dice que son <strong>LD</strong> si y solo si uno de ellos es un múltiplo escalar del otro [Isabel Pustilnik, 2017].
+            <!--Contenido de la presentación-->
+            <section>
+                <section id="vec2d">
+                    <h5 class="titulo">Vectores en 2 dimensisones</h5>
+                    <div>
+                        <div class="contenedor-izquierdo">       
+                            <p class="texto-18">
+                                La naturaleza de los vectores (segmentos dirigidos) y su comportamiento es representado de forma geométrica y algebraica.
                             </p>
-                            <p class="texto-22">
-                                Entonces se puede afirmar que dos vectores en $R^{2}$ y $R^{3}$ son LD si y sólo si están sobre la misma recta que pasa por el origen (vectores paralelos).
+                            <p class="texto-18"> 
+                                Independientemente del espacio vectorial o sub espacio en el que se encuentren, los vectores, tienen una <strong>magnitud</strong>, 
+                                señalan un <strong>sentido</strong> y representan una <strong>dirección</strong>.
+                            </p>
+                            <ul>
+                                <li class="items texto-18"><strong>Maginitud:</strong> es la lontitud del vector.</li>
+                                <li class="items texto-18"><strong>Dirección:</strong> el ángulo del vector respecto al eje x.</li>
+                                <li class="items texto-18"><strong>Sentido:</strong> la orientacion del segmento (puede ser positivo o negativo).</li>
+                            </ul>
+                            <p class="texto-18">   
+                                Si un vector tiene la misma magnitud y dirección que otro vector quiere decir que estos dos vectores son equivalentes.
                             </p>
                         </div>
                         <div class="contenedor-derecho">
-                            <iframe src="https://www.geogebra.org/graphing/hqaktxth?embed" width="800" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
-                        </div>
+                            <iframe src="https://www.geogebra.org/graphing/uvjezxtm?embed" width="500" height="500" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                        </div> 
+                    </div>              
                 </section>
-                <section>
-                    <h5 class="titulo">Ejemplos</h5>
-                        <div class="contenedor-izquierdo">    
+                <section id="mul-escalar">
+                    <h5 class="titulo">Múltiplo escalar</h5>
+                    <p class="texto-22"> Si $k$ es un número real y $\vec{v}$ es un vector; entonces $k\vec{v}$ se define como un vector cuya magnitud es $|k|$ veces la magnitud $||\vec{v}||$ 
+                        y cuyo sentido es el mismo que la de de $\vec{v}$ si $k > 0$ y opuesto si $k < 0$.
+                    </p>
+                    <iframe src="https://www.geogebra.org/graphing/sp4d4ghm?embed" width="800" height="400" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                </section>
+                <section id="vec-pos">
+                    <h5 class="titulo">Vector posición</h5>
+                    <div>
+                        <div class="contenedor-izquierdo">
                             <p class="texto-22">
-                                En $R^{3}$, tres vectores $v_1$, $v_2, v_3$ son <strong>LD</strong> si y sólo si están ubicados en el mismo plano (coplanares).
+                                Si $\vec{PQ}$ es un vector en el plano coordenado $xy$ junto a otros vectores (como se muestra en la gráfica), se dice que el vector posición de $\vec{PQ}$ es $\vec{OA}$. 
+                                Entonces el vector $\vec{OA}$ se llama <strong class="texto-red">vector posición</strong> porque:
                             </p>
-                            <iframe src="https://www.geogebra.org/3d/tj5s27pr?embed" width="800" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                            <ul>
+                                <li class="items texto-22">tiene como punto inicial el origen.</li>
+                                <li class="items texto-22">tiene un <strong class="texto-red">único</strong> par ordenado de números reales $(a_1, a_2)$ que son el punto final del vector.</li>
+                            </ul>
                         </div>
                         <div class="contenedor-derecho">
+                            <iframe src="https://www.geogebra.org/graphing/xfp3fhkn?embed" width="500" height="500" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h5 class="titulo">Vector posición</h5>
+                    <div>
+                        <div class="contenedor-izquierdo">
                             <p class="texto-22">
-                                 Tres vectores $\vec{u}, \vec{v}, \vec{w}$ en $R^{3}$ que son <strong>LI</strong>.
+                                Si un vector es diferente de $0$; $a = < a_1,a_2 >$ en $R^{2}$, se puede representar en un plano coordenado por un segmento 
+                                dirigido $\vec{PQ}$ con cualquier punto inicial $P(x,y)$ y con cualquier punto final $Q(x+a_1, y+a_2)$.
                             </p>
+                            <p class="texto-22">
+                                Entonces se puede decir que $\vec{PQ}$ corresponde a $a$ o viceversa.
+                            </p>
+                        </div>
+                        <div class="contenedor-derecho">
+                            <iframe src="https://www.geogebra.org/graphing/r5eggwm5?embed" width="800" height="500" style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                        </div>
+                    </div> 
+                </section>
+                <section>
+                    <h5 class="titulo">Vector posición</h5>
+                    <div>
+                        <div class="contenedor-izquierdo">
+                            <p class="texto-22">
+                                Entonces si $P(x_1,y_1)$ y $Q(x_2,y_2)$ son puntos, entonces el vector $a$ en $R^{2}$ que corresponde a $\vec{PQ}$ es: 
+                            </p>
+                            <span class="texto-22">$$a = < x_2-x_1, y_2-y_1 >$$</span>
                             </br>
-                            <iframe src="https://www.geogebra.org/3d/g8f8qee9?embed" width="800" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                            <p class="texto-22">
+                                <strong>Ejercicio: </strong> Dados los puntos $P(-2,3)$ y $Q(4,5)$ encontrar vectores $\vec{a}$ y $\vec{b}$ en $R^{2}$ que correspondan a $\vec{PQ}$ y $\vec{QP}$. 
+                                Trazar $\vec{PQ}$ y $\vec{QP}$ y los vectores posición $\vec{a}$ y $\vec{b}$.
+                            </p>
                         </div>
+                        <div class="contenedor-derecho">
+                            <iframe src="https://www.geogebra.org/graphing/afdxwxcj?embed" width="500" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                        </div>
+                    </div> 
+                </section>
+                <section id="mag-vector">
+                    <h5 class="titulo">Magnitud de un vector</h5>
+                    <p class="texto-22">La magnitud de un vector $||\vec{PQ}||$ es la longitud del segmento $PQ$. Si $\vec{OA}$ es el <strong class="texto-red">vector posición</strong> de $\vec{PQ}$, entonces la magnitud de $||\vec{OA}||$ con compoenentes $< a_1, a_2 >$ es: $$||\vec{OA}|| = \sqrt{a_1^{2}+ a_2^{2}}$$</p>
+                    <iframe src="https://www.geogebra.org/graphing/p8eftxwd?embed" width="800" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                </section>
+                <section id="vec-unitario">
+                    <h5 class="titulo">Vector unitario</h5>
+                    <div>
+                        <div class="contenedor-izquierdo">
+                            <p class="texto-18"> Los vectores unitarios son aquellos que tiene por magnitud, norma o modulo de 1. 
+                                Los vectores unitarios <strong class="texto-red">canónicos</strong> tienen como componentes $i = <1,0>$ y $j = <0,1>$ como se muestran en la imagen.
+                            </p>
+                            <p class="texto-18">Entonces si $a$ es un vector con componentes $< a_1, a_2 >$, este se puede expresar como una combinación lineal de los vectores $i$ y $j$ de la forma $a = a_1i + a_2j$. </p>
+                            <p class="texto-18">Usando la definición anterior se puede representar a  $a = < a_1, a_2>$ como: </p>
+                            <p class="texto-18">$< a_1, a_2> = < a_1,0> + < 0, a_2>$ </p>
+                            <p class="texto-18" style="padding-left: 90px;">$= a_1< 1, 0 > + a_2 < 0 ,1>$</p>
+                            <p class="texto-18" style="padding-left: 90px;">$= a_1i + a_2j$ </p>
+                        </div>
+                        <div class="contenedor-derecho">
+                            <iframe src="https://www.geogebra.org/graphing/f9x8hf5m?embed" width="800" height="500"  style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h5 class="titulo">Vector unitario</h5>
+                    <div>
+                        <div class="contenedor-izquierdo">
+                            <p class="texto-18"> 
+                                Si $a$ es un vector diferente de <strong>cero</strong>, entonces puede definirse a un vector unitario ${u}$ con la misma dirección y 
+                                sentido que ${a}$ por medio de: $$ u = \frac{1}{||a||} a$$
+                            </p>
+                            <p class="texto-18">
+                                <strong>Ejercicio 1:</strong> Si $a = 5i+j$ y $b= 4i+2j$. Exprese  el vector resultante $2a-2b$ como una combinación lineal y grafiquelo.
+                            </p>
+                            <p class="texto-18">
+                                <strong>Ejercicio 2:</strong> Encuentre un vector unitario que tenga la misma dirección que $4i-2j$ y grafiquelo.
+                            </p>
+                        </div>
+                        <div class="contenedor-derecho">
+                            <iframe src="https://www.geogebra.org/graphing/bnzatmvz?embed" width="800" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                        </div>
+                    </div>
                 </section>
             </section>
-            <section id="conj-gen-base">
-                <h5 class="titulo">Conjunto generador y base</h5>
-                <p class="texto-22">
-                    Sea $\left\lbrace v_1, v_2, v_3,...v_r\right\rbrace$ un conjunto de vectores de un espacio vectorial $V$; si 
-                    todo vector de $V$ puede expresarse como una combinación lineal de $ v_1, v_2,...,v_r$ 
-                    entonces se dice que $\left\lbrace v_1, v_2, v_3,...v_r\right\rbrace$ es un <strong>conjunto generador de $V$</strong> o que también  $ v_1, v_2,...,v_r$ generan $V$.
-                </p>
-                </br>
-                <span class="texto-22">
-                    Una base es un conjunto B del espacio vectorial V si se cumplen las siguientes condiciones:
-                </span>
-                </br>
-                <div class="block-items-math">
+            <section>
+                <section id="vec3d">
+                    <h5 class="titulo">Vectores en 3 dimensiones</h5>
+                    <div>
+                        <div class="contenedor-izquierdo">
+                            <p class="texto-22">
+                                Un vector en 3 dimensiones se compone de una terna ordenada $(a,b,c)$, la cual puede ser representada en un sistema de coordenadas que tenga 3 dimensiones $(x,y,z)$.
+                            </p>
+                            <p class="texto-22">
+                                Para establecer ese sistema de coordenadas se necesita un punto fijo $O$ y tres rectas coordenadas que sean perpendiculares entre sí
+                            </p>
+                        </div>
+                        <div class="contenedor-derecho">
+                            <iframe src="https://www.geogebra.org/3d/qn5pj9kg?embed" width="500" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </section>
+                <section id="dist-puntos">
+                    <h5 class="titulo">Distancia entre puntos</h5>
+                    <div>
+                        <div class="contenedor-izquierdo">
+                            <p class="texto-18">
+                                La distancia entre dos puntos cualesquiera $P_1(x_1, y_1, z_1)$ y $P_2(x_2, y_2, z_2)$ es:
+                            </p>
+                            <p class="texto-16">
+                                $d(P_1,P_2) = \sqrt{{(x_2-x_1)}^2+{(y_2-y_1)}^2+{(z_2-z_1)}^2}$ 
+                            </p>
+                            <p class="texto-18">
+                                Esta se formula se extiende a dos dimensiones siempre y cuando $z_1$ y $z_2 = 0$.
+                            </p>
+                            <p class="texto-18">
+                                <strong>Ejercicio 1:</strong> Calcular la distancia entre los puntos $P_1(-1, -3, 1)$ y $P_2(3, 4, -2)$. Grafique los resultados.
+                            </p>
+                        </div>
+                        <div class="contenedor-derecho">
+                            <iframe src="https://www.geogebra.org/3d/xhwnftuz?embed" width="500" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </section>
+                <section id="gen-3d">
+                    <h5 class="titulo">Generalidades pra tres dimensiones</h5>
+                    <p class="texto-18"> Las propiedades de los vectores en dos dimensiones se pueden generalizar en $R^{3}$, basta con tener en cuenta la tercera componente.</p>
                     <ul>
-                        <li class="block-items-math">Todos los elementos de B pertenecen al espacio vectorial $V$.</li>
-                        <li class="block-items-math">Los elementos de B forman un sistema linealmente independiente.</li>
-                        <li class="block-items-math">Todo elemento de $V$ se puede escribir como combinación lineal de los elementos de la base B (es decir, B es un sistema generador de $V$).</li>
+                        <li class="items texto-18">suma: $a+b = < x_1+x_2, y_1+y_2,z_1+z_2>$ </li>
+                        <li class="items texto-18">producto escalar: $ca = < ca_1, ca_2 ,ca_3>$ </li>
+                        <li class="items texto-18">vector posición: $a = < x_2 - x_1, y_2-y_1, z_2-z_1>$</li>
+                        <li class="items texto-18">modulo: $||a|| = \sqrt{a_1^{2}+ a_2^{2} + a_3^{2}}$</li>
+                        <li class="items texto-18">vector unitario: $ u = \frac{1}{||a||} a$, donde la tercera componente es $k (0,0,1)$ </li>
                     </ul>
-                </div>
-
+                </section>
+                <section id="ref">
+                    <h5 class="titulo">Referencias</h5>
+                <p class="texto-22">Swokowski, E. W. (2017). Cálculo con Geometría Analítica. Grupo Editorial Iberoamérica.</p>
+                </section>
             </section>
-            <section id="ref">
-                <h5 class="titulo">Referencias</h5>
-                <p class="texto-22">ISABEL PUSTILNIK, FEDERICO GÓMEZ. Universidad Tecnológica Nacional, F. R. B. A. (2017). Conjunto generador.li y ld. base. dimensión.</p>
-                <a class="link-ref" href="https://aga.frba.utn.edu.ar/conjunto-generador-li-y-ld-base-dimension/">https://aga.frba.utn.edu.ar/conjunto-generador-li-y-ld-base-dimension/</a>
-                <p class="texto-22">ISABEL PUSTILNIK, FEDERICO GÓMEZ. Universidad Tecnológica Nacional, F. R. B. A. (2017). Conjunto generador. Espacios vectoriales</p>
-                <a class="link-ref" href="https://aga.frba.utn.edu.ar/conjunto-generador-li-y-ld-base-dimension/">https://aga.frba.utn.edu.ar/conjunto-generador-li-y-ld-base-dimension/</a>
-            </section>
-
         </div>
     </div>
     <script src="reveal.js-master/dist/reveal.js"></script>
@@ -196,16 +256,20 @@
     <script src="reveal.js-master/plugin/highlight/highlight.js"></script>
     <script>
         Reveal.initialize({
+
+            controls: true,
+            postMessage: true,
+            slideNumber: true,
+            hash: true,
+            transition: 'convex',
+            progress: true,
+            keyboard: true,
             math: {
                 mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
                 config: 'TeX-AMS_HTML-full',
                 // pass other options into `MathJax.Hub.Config()`
                 TeX: { Macros: { RR: "{\\bf R}" } }
             },
-            controls: true,
-            slideNumber: true,
-            hash: true,
-            transition: 'convex',
             plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
         });
     </script>

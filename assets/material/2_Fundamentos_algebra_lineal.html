@@ -54,6 +54,7 @@
                 </ul>
             </section>
 
+            <!--Inicio de la presentación-->
             <section id="defvector">
                 <h5 class="titulo">Definición de vector</h5>
                 <p class="texto-22">Es un segmento de recta contado a partir de un punto en el espacio. Su longitud a escala representa: una magnitud, una dirección y un sentido que puede ser representado en 2 o 3 dimensiones.</p>
@@ -184,7 +185,7 @@
                 <p class="texto-22">ISABEL PUSTILNIK, FEDERICO GÓMEZ. Universidad Tecnológica Nacional, F. R. B. A. (2017). Conjunto generador. Espacios vectoriales</p>
                 <a class="link-ref" href="https://aga.frba.utn.edu.ar/conjunto-generador-li-y-ld-base-dimension/">https://aga.frba.utn.edu.ar/conjunto-generador-li-y-ld-base-dimension/</a>
             </section>
-
+            <!--Fin de la presentación-->
         </div>
     </div>
     <script src="reveal.js-master/dist/reveal.js"></script>
@@ -193,16 +194,19 @@
     <script src="reveal.js-master/plugin/highlight/highlight.js"></script>
     <script>
         Reveal.initialize({
+            
+            controls: true,
+            slideNumber: true,
+            hash: true,
+            transition: 'convex',
+            progress: true,
+            keyboard:true,
             math: {
                 mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
                 config: 'TeX-AMS_HTML-full',
                 // pass other options into `MathJax.Hub.Config()`
                 TeX: { Macros: { RR: "{\\bf R}" } }
             },
-            controls: true,
-            slideNumber: true,
-            hash: true,
-            transition: 'convex',
             plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
         });
     </script>

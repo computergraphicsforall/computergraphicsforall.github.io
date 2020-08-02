@@ -24,7 +24,7 @@ ul {
 li::before {
     content: "\2022"; /* Insertamos el marcador */
     padding-right: 8px; /* Establecemos el espacio entre las viñetas y el list item */
-    color: rgb(50, 67, 224); /* Coloreamos la viñeta */
+    color: rgb(187, 193, 255); /* Coloreamos la viñeta */
 }
 
 .agenda {
@@ -37,6 +37,13 @@ li::before {
     text-align: left;
     font-size: 22px;
     display: block;
+    list-style: disc;
+}
+.items {
+    text-align: left;
+    font-size: 22px;
+    display: block;
+    padding-bottom: 5px;
     list-style: disc;
 }
 .subtema {
@@ -56,20 +63,40 @@ li::before {
     display: block;
 }
 
+.texto-18 {
+    text-align: justify;
+    font-size: 18px;
+    display: block;
+}
+
+.texto-16 {
+    text-align: justify;
+    font-size: 16px;
+    display: block;
+}
+.texto-red {
+    text-align: justify;
+    color: red;
+}
 .contenedor-izquierdo {
     text-align: left;
-    padding-right: 5px ;
+    padding-right: 2px ;
     float: left;
-    width: 45%;
+    width: 42%;
+    z-index: auto;
 }
 
 .contenedor-derecho {
     text-align: left;
     float: right;
-    width: 50%;
+    width: 55%;
+    z-index: auto;
 }
 .link-ref {
     text-align: justify;
     font-size: 18px;
     display: block;
+}
+.p {
+    padding-bottom: 10px;
 }
