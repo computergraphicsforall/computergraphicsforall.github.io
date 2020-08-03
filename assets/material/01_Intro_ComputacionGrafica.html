@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+
+<head>
+    
+    <!--Meta configuration-->
+    <meta charset='utf-8'>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Fundamentos para álgebra lineal</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="reveal.js-master/dist/reveal.js"></script>
+    <script type="text/javascript" src="reveal.js-master/plugin/math/math.js"></script>
+    <link rel="stylesheet" href="reveal.js-master/dist/reset.css" />
+    <link rel="stylesheet" href="reveal.js-master/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal.js-master/dist/theme/black.css" id="theme"/>
+    <link rel="stylesheet" href="reveal.js-master/plugin/highlight/monokai.css" id="highlight-theme"/>
+    <link rel="stylesheet" href="estilos.css"/>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!--Presentación-->
+            <section>
+                <h3>Introducción a la Computación Gráfica</h3>
+                <p>Computación gráfica</p>
+                </br>
+                <span class="prof">Jorge Victorino, Miguel Barrero</span>
+                </br>
+                <span class="email">jvictorinog@ucentral.edu.co, mbarrerop@ucentral.edu.co</span>
+                </br>
+                <span class="instituciones">Universidad Central</span>
+                <span class="instituciones">2020</span>
+            </section>
+
+            <!--Contenido de la presentación-->
+            <section>
+                <h4>Agenda</h4>
+                </br>
+                <ul>
+                    <li class="agenda"><a href="#defvector">1</a></li>
+                    <li class="agenda"><a href="#evectoriales">2</a></li>
+                    <li class="agenda"><a href="#subespacio">3</a></li>
+                    <li class="agenda"><a href="#comblineal">4</a></li>
+                    <li class="agenda"><a href="#dep-indep-lineal">5</a></li>
+                    <li class="agenda"><a href="">6</a></li>
+                    <li class="agenda"><a href="">Referencias</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <section id="defvector">
+                    <h5 class="titulo">Recursos</h5>
+                    <p class="texto-22">Página del curso: <a href="https://computergraphicsforall.github.io/">https://computergraphicsforall.github.io/</a></p>
+                    <iframe src="https://computergraphicsforall.github.io/" width="800" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                </section>
+                <section>
+                    <h5 class="titulo">Reglas del curso</h5>
+                    <p class="texto-22">Documentos del curso:</p>
+                    <<ul>
+                        <li class="block-items-math">Sylabus</li>
+                        <li class="block-items-math">Programación de desarrollo de la asignatura PDA </li>
+                    </ul>
+                    <p class="texto-22">Inicio de la clase a la hora pactada, se recomienda conectarse 10 minutos antes</p>
+                </section>
+            </section>
+
+
+            <section id="evectoriales">
+                <h5 class="titulo">Espacios vectoriales</h5>
+                <p class="texto-22"> Un espacio vectorial es un conjunto no vacío $V$ de objetos, llamados 
+                <strong>vectores</strong> en el que se ha definido dos operaciones: <strong>la suma</strong> y el <strong>producto por un escalar</strong> (número real) y que se encuentran sujetos a los siguientes axiomas.</p> 
+                <div class="block-items-math">
+                    <ul>
+                        <li class="block-items-math">$u+v = v+u$</li>
+                        <li class="block-items-math">$u+v \in V$</li>
+                        <li class="block-items-math">$(u+v)+w = u+(v+w)$</li>
+                        <li class="block-items-math">Existe un vector nulo $0_v\in V $ tal que $ v+0_v = v$</li>
+                        <li class="block-items-math">Para cada $v$ en $V$, existe un opuesto $(-v)\in V$ tal que $v+(-v)= 0_v$</li>
+                        <li class="block-items-math">$\alpha v \in V$</li>
+                        <li class="block-items-math">$\alpha (u+v) = \alpha u + \alpha v$</li>
+                        <li class="block-items-math">$(\alpha + \beta)v = \alpha v + \beta v$</li>
+                        <li class="block-items-math">$\alpha (\beta v) = (\alpha \beta)v$</li>
+                        <li class="block-items-math">$1v = v$</li>
+                    </ul>
+                </div>
+            </section>
+            <section id="subespacio">
+                <h5 class="titulo">Sub espacios vectoriales</h5>
+                <p class="texto-22">Sea $V$ un espacio vectorial y $W$ un subconjunto no vacío de $V$. $W$ es un <strong>sub espacio</strong> de $V$</p>
+                </br>
+                <div class="block-items-math">
+                    <ul>
+                        <li class="block-items-math">si $u,v \in W$, entonces $u+v \in W$</li>
+                        <li class="block-items-math">si $a \in V$ y $u \in W$, entonces $au \in W $</li>
+                    </ul>
+                </div>
+                </br>
+                <p class="texto-22">Ejemplo: $W=\left\lbrace(x,y)\in R^{2} / x=0\right\rbrace$</p>
+            </section>
+
+            <section id="comblineal">
+                <h5 class="titulo">Combinación lineal</h5>
+                <div>
+                    <div class="contenedor-izquierdo">
+                        <p class="texto-22">Sean $v_1, v_2, v_3,...v_r$ de un espacio vectorial $V$; se dice que $w$ es una combinación lineal de los vectores  $v_1, v_2, v_3,...v_r$ si:</p>
+                        <span class="texto-22">$$w= k_1v_1+k_2v_2+...k_rv_r$$</span>
+                        <p class="texto-22">Donde $k_1,k_2,...k_r$ son escalares.</p>
+                        <p class="texto-22"> <strong>Ejemplo:</strong>¿El vector $(1,0,4)$ sería una combinación lineal de los vectores $(1,0,1)$ y $(0,0,2)$?</p>
+                    </div>
+                    <div class="contenedor-derecho">
+                        <iframe src="https://www.geogebra.org/3d/y8fsjseh?embed" width="800" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                    </div>
+                </div>
+                </br>
+            </section>
+            <section id="dep-indep-lineal">
+                <section>
+                    <h5 class="titulo">Dependencia e independencia lineal</h5>
+                    <p class="texto-22">Un conjunto de vectores $\left\lbrace v_1, v_2, v_3,...v_r\right\rbrace$ de un espacio vectorial $V$ es <strong>dependiente</strong> 
+                        si y solo si al menos uno de los vectores puede expresarse como una combinación lineal del otro. 
+                        Si el conjunto  $\left\lbrace v_1, v_2, v_3,...v_r\right\rbrace$ es linealmente dependiente admite otras soluciones además de la trivial. 
+                        Esto quiere decir que al menos uno de los escalares distinto de cero [Isabel Pustilnik, 2017].
+                    </p>
+                    </br>
+                    <p class="texto-22">
+                        <strong>Ejemplo: </strong>Es el conjunto $\left\lbrace (1,0,0),(0,1,0),(1,1,1)\right\rbrace$ linealmente independiente (LI) o linealmente dependiente (LD)?
+                    </p>
+                    <p class="texto-22">
+                        <strong>Ejemplo: </strong>¿Es el conjunto $\left\lbrace (1,1),(1,-1),(2,0)\right\rbrace$ linealmente independiente (LI) o linealmente dependiente (LD)?
+                    </p> 
+                </section>
+                <section>
+                    <h6 class="titulo">Ejemplos</h5>
+                        <div class="contenedor-izquierdo">    
+                            <p class="texto2">
+                                Ahora considere los vectores de la gráfica. Si se tienen dos vectores $v_1$ y $v_2$ en 2D, se dice que son LD si y solo si uno de ellos es un múltiplo escalar del otro [Isabel Pustilnik, 2017].
+                                $v_1$ y $v_2$ son LD si y solo si uno de ellos es un múltiplo escalar del otro [Isabel Pustilnik, 2017].
+                            </p>
+                        </div>
+                        <div class="contenedor-derecho">
+
+                        </div>
+                </section>
+            </section>
+            <section>
+
+            </section>
+        </div>
+    </div>
+    <script src="reveal.js-master/dist/reveal.js"></script>
+    <script src="reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            math: {
+                mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+                config: 'TeX-AMS_HTML-full',
+                // pass other options into `MathJax.Hub.Config()`
+                TeX: { Macros: { RR: "{\\bf R}" } }
+            },
+            controls: true,
+            slideNumber: true,
+            hash: true,
+            transition: 'convex',
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+        });
+    </script>
+</body>
+
+</html>
