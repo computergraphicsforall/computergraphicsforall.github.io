@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+
+<head>
+    
+    <!--Meta configuration-->
+    <meta charset='utf-8'>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Producto escalar y vectorial</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="reveal.js-master/dist/reveal.js"></script>
+    <script type="text/javascript" src="reveal.js-master/plugin/math/math.js"></script>
+    <link rel="stylesheet" href="reveal.js-master/dist/reset.css" />
+    <link rel="stylesheet" href="reveal.js-master/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal.js-master/dist/theme/black.css" id="theme"/>
+    <link rel="stylesheet" href="reveal.js-master/plugin/highlight/monokai.css" id="highlight-theme"/>
+    <link rel="stylesheet" href="estilos.css"/>
+</head>
+
+<body id="presentation">
+    <div class="reveal">
+        <div class="slides">
+
+            <!--Presentación-->
+            <section>
+                <h3>Producto escalar y vectorial</h3>
+                <p>Computación gráfica</p>
+                </br>
+                <span class="prof">Jorge Victorino<sup>1, 2</sup>, Miguel Barrero<sup>1</sup></span>
+                </br>
+                <span class="email">jvictorinog@ucentral.edu.co, mbarrerop@ucentral.edu.co</span>
+                </br>
+                <span class="instituciones"><sup>1</sup>Universidad Nacional, <sup>2</sup>Universidad Central</span>
+                <span class="instituciones">2020</span>
+            </section>
+
+            <!--Contenido de la presentación-->
+            <section>
+                <h4>Agenda</h4>
+                </br>
+                <ul>
+                    <li class="agenda"><a href="#prod-esc">Producto escalar</a></li>
+                    <ul>
+                        <li class="agenda"><a href="#ang-vec">Ángulo entre vectores</a></li>
+                        <li class="agenda"><a href="#proy">Proyección</a></li>
+                    </ul>
+                    <li class="agenda"><a href="#prod-esc">Producto vectorial</a></li>
+                    <ul>
+                        <li class="agenda"><a href="#notacion">Notación</a></li>
+                        <li class="agenda"><a href="#impli">Implicaciones</a></li>
+                        <li class="agenda"><a href="#int-geom">Interpretación geométrica</a></li>
+                        <li class="agenda"><a href="#prod-vec-unt">Productos vectoriales unitarios</a></li>
+                    </ul>
+                    <li class="agenda"><a href="#ref">Referencias</a></li>
+                </ul>
+            </section>
+
+            <!--Contenido de la presentación-->
+            <section>
+                <section id="vec2d">
+                    <h5 class="titulo">Producto escalar</h5>
+                    <div>
+                        <div class="contenedor-izquierdo">       
+                            <p class="texto-18">
+                                El producto escalar, tal y como se escucha es un valor escalar.
+                            </p>
+                            <p class="texto-18"> 
+                                <strong>El producto escalar</strong> o <strong>producto punto</strong> se expresa de la forma:
+                                $$a \cdot b$$
+                            </p>
+                            <p class="texto-18">donde $a = < a_1, a_2, a_3>$ y $b = < b_1, b_2, b_3>$; por lo tanto:</p>
+                            <p class="texto-18">$$\textbf{a} \cdot \textbf{b} = a_1b_1 + a_2b_2 + a_3b_3$$</p>
+                            <p class="texto-18">Es importante resaltar que el <strong>producto interior</strong> es un escalar y no un vector.</p>
+                            <p class="texto-18"><strong>Ejercicio:</strong> calcule el producto punto entre $a = < 2, 4,-3>$ y $b = <-1,5,2>$ y grafique los vectores.</p>
+                        </div>
+                        <div class="contenedor-derecho">
+                            <iframe src="https://www.geogebra.org/3d/m3hkzjjn?embed" width="800" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                        </div> 
+                    </div>
+                </section>
+                <section id="ang-vec">
+                    <h5 class="titulo">Ángulo entre vectores</h5>
+                    <div class="contenedor-izquierdo">       
+                        <p class="texto-18">
+                            Sean $\textbf{a}$ y $\textbf{b}$ dos vectores diferentes de cero [Swokoswski, 2017]:
+                        </p>
+                        <ul>
+                            <li class="items texto-18">Si $\textbf{b}$ no es un múltiplo escalar de $\textbf{a}$ y si $\vec{\textbf{OA}}$ y $\vec{\textbf{OB}}$ son los vectores de posición $\textbf{a}$ y $\textbf{b}$, 
+                                respectivamente, entonces el $\textbf{ángulo}$ $\alpha$ entre $\textbf{a}$ y $\textbf{b}$ (o entre $\vec{\textbf{OA}}$ y 
+                                $\vec{\textbf{OB}}$) es el ángulo $AOB$ del triángulo determinado por los puntos A, O y B.
+                            </li>
+                            <li class="items texto-18">
+                                Si $\textbf{b = ca}$ para un escalar $\textbf{c}$ (es decir, si $\textbf{a}$ y $\textbf{b}$ son paralelos), entonces $\alpha = 0$ si $c > 0$ y $\alpha = \pi$ si $c < 0$.
+                            </li>
+                        </ul>
+                        <p class="texto-18">
+                            Se dice que dos vectores $\textbf{a}$ y $\textbf{b}$ son $\textbf{ortogonales o perpendiculares}$, si $\alpha = \frac{\pi}{2}$
+                        </p>
+                    </div>
+                    <div class="contenedor-derecho">
+                        <iframe src="https://www.geogebra.org/3d/hbqexfz5?embed" width="500" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                    </div> 
+                </section>
+                <section>
+                    <h5 class="titulo">Ángulo entre vectores</h5>
+                    <div class="contenedor-izquierdo">       
+                        <p class="texto-18">
+                            Si $\alpha$ es el ángulo entre dos vectores $\textbf{a}$ y $\textbf{b}$ diferentes de cero, entonces:
+                        </p>
+                        <p class="texto-18">
+                            $$a \cdot b = ||a|| ||b|| cos\alpha$$
+                        </p>
+                        <p class="texto-18">
+                            $$cos\alpha = \frac{a \cdot b}{||a||||b||}$$
+                        </p>
+                        <p class="texto-18">
+                            Los vectores $\textbf{a}$ y $\textbf{b}$ son ortogonales si y sólo si $\textbf{a} \cdot \textbf{b} = 0$.
+                        </p>
+                        <p class="texto-18">
+                            <strong>Ejercicio:</strong> calcule el ángulo entre $a = < 4,-3,1 >$ y $b = <-1,-2,2>$ e indique si los vectores son ortogonales.
+                        </p>
+                    </div>
+                    <div class="contenedor-derecho">
+                        <iframe src="https://www.geogebra.org/3d/fcqtvetc?embed" width="500" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                    </div> 
+                </section>
+                <section>
+                    <h5 class="titulo">Ángulo entre vectores</h5>
+                    <p class="texto-18">
+                        El ángulo entre dos vectores (segmentos dirigidos) $\vec{PQ}$ Y $\vec{TR}$ se define como el ángulo $\alpha$ entre sus vectores posición $\textbf{a}$ y $\textbf{b}$ en $R^{3}$.
+                    </p>
+                    <iframe src="https://www.geogebra.org/3d/vmxcbjav?embed" width="800" height="420" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                    <p class="texto-18">
+                        Entonces el producto escalar entre $\vec{PQ}$ Y $\vec{TR}$ se define por: $\vec{PQ} \cdot \vec{TR} = a \cdot b = ||a|| ||b|| cos \alpha $
+                    </p>
+            </section>
+            <section>
+                <h5 class="titulo">Proyección</h5>
+                <p class="texto-18">
+                    Si $\vec{PQ}$ y $\vec{PR}$ tienen el mismo punto inicial y si $S$ es la proyección de $Q$ sobre la recta que pasa por $P$ y $R$, 
+                    entonces el escalar $||\vec{PQ}|| cos \alpha$ se llama componente de $\vec{PQ}$ a lo largo de $\vec{PR}$ y se abrevia $comp_{\vec{PR}}\vec{PQ}$.
+                </p>
+               <div>
+                   <div class="contenedor-izquierdo">
+                    
+                    <p class="texto-18" style="padding-bottom: 20px;">
+                        Donde:
+                        $comp_{\vec{PR}}\vec{PQ} =||PQ|| cos\alpha = \vec{PQ}\cdot \frac{1}{||\vec{PR}||}\vec{PR}$.
+                    </p>
+                    
+                    <p class="texto-18" style="padding-bottom: 20px;">
+                        Esto quiere decir que la componente de $\vec{PQ}$ a lo largo de $\vec{PR}$ es igual al producto escalar de $\vec{PQ}$ y 
+                        un vector unitario que tiene la misma dirección que $\vec{PR}$.
+                    </p>
+                    <span></span>
+                    <p class="texto-18">
+                        Finalmente si $a$ y $b$ son dos vectores en $R^{3}$ con $b$ $\not =0$. La componente de $a$ a lo largo de $b$ se denota por $comp_{b}a$ y se define por: $$comp_{b}a = a \cdot \frac{1}{||b||}b$$</p>
+                   </div>
+                   
+                   <div class="contenedor-derecho">
+                    <iframe src="https://www.geogebra.org/classic/nek2fy2d?embed" width="500" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                   </div>
+
+               </div>
+            </section>       
+            <section id="ref">
+                <h5 class="titulo">Referencias</h5>
+                <p class="texto-22">Swokowski, E. W. (2017). Cálculo con Geometría Analítica. Grupo Editorial Iberoamérica.</p>
+            </section>
+        </div>
+    </div>
+    <script src="reveal.js-master/dist/reveal.js"></script>
+    <script src="reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+
+            controls: true,
+            postMessage: true,
+            slideNumber: true,
+            hash: true,
+            transition: 'convex',
+            progress: true,
+            keyboard: true,
+            math: {
+                mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+                config: 'TeX-AMS_HTML-full',
+                // pass other options into `MathJax.Hub.Config()`
+                TeX: { Macros: { RR: "{\\bf R}" } }
+            },
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+        });
+    </script>
+</body>
+
+</html>
