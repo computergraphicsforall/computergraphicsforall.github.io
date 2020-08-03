@@ -49,7 +49,7 @@
                         <li class="agenda"><a href="#ang-vec">Ángulo entre vectores</a></li>
                         <li class="agenda"><a href="#proy">Proyección</a></li>
                     </ul>
-                    <li class="agenda"><a href="#prod-esc">Producto vectorial</a></li>
+                    <li class="agenda"><a href="#prod-vec">Producto vectorial</a></li>
                     <ul>
                         <li class="agenda"><a href="#notacion">Notación</a></li>
                         <li class="agenda"><a href="#impli">Implicaciones</a></li>
@@ -138,36 +138,165 @@
                     <p class="texto-18">
                         Entonces el producto escalar entre $\vec{PQ}$ Y $\vec{TR}$ se define por: $\vec{PQ} \cdot \vec{TR} = a \cdot b = ||a|| ||b|| cos \alpha $
                     </p>
+                </section>
+                <section>
+                    <h5 class="titulo">Proyección</h5>
+                    <p class="texto-18">
+                        Si $\vec{PQ}$ y $\vec{PR}$ tienen el mismo punto inicial y si $S$ es la proyección de $Q$ sobre la recta que pasa por $P$ y $R$, 
+                        entonces el escalar $||\vec{PQ}|| cos \alpha$ se llama componente de $\vec{PQ}$ a lo largo de $\vec{PR}$ y se abrevia $comp_{\vec{PR}}\vec{PQ}$.
+                    </p>
+                    <div>
+                        <div class="contenedor-izquierdo">  
+                            <p class="texto-18" style="padding-bottom: 20px;">
+                                Donde:
+                                $comp_{\vec{PR}}\vec{PQ} =||PQ|| cos\alpha = \vec{PQ}\cdot \frac{1}{||\vec{PR}||}\vec{PR}$.
+                            </p>
+                            
+                            <p class="texto-18" style="padding-bottom: 20px;">
+                                Esto quiere decir que la componente de $\vec{PQ}$ a lo largo de $\vec{PR}$ es igual al producto escalar de $\vec{PQ}$ y 
+                                un vector unitario que tiene la misma dirección que $\vec{PR}$.
+                            </p>
+                            <span></span>
+                            <p class="texto-18">
+                                Finalmente si $a$ y $b$ son dos vectores en $R^{3}$ con $b$ $\not =0$. La componente de $a$ a lo largo de $b$ se denota por $comp_{b}a$ y se define por: $$comp_{b}a = a \cdot \frac{1}{||b||}b$$</p>
+                        </div>
+                        
+                        <div class="contenedor-derecho">
+                            <iframe src="https://www.geogebra.org/classic/nek2fy2d?embed" width="500" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </section>
             </section>
             <section>
-                <h5 class="titulo">Proyección</h5>
-                <p class="texto-18">
-                    Si $\vec{PQ}$ y $\vec{PR}$ tienen el mismo punto inicial y si $S$ es la proyección de $Q$ sobre la recta que pasa por $P$ y $R$, 
-                    entonces el escalar $||\vec{PQ}|| cos \alpha$ se llama componente de $\vec{PQ}$ a lo largo de $\vec{PR}$ y se abrevia $comp_{\vec{PR}}\vec{PQ}$.
-                </p>
-               <div>
-                   <div class="contenedor-izquierdo">
-                    
-                    <p class="texto-18" style="padding-bottom: 20px;">
-                        Donde:
-                        $comp_{\vec{PR}}\vec{PQ} =||PQ|| cos\alpha = \vec{PQ}\cdot \frac{1}{||\vec{PR}||}\vec{PR}$.
-                    </p>
-                    
-                    <p class="texto-18" style="padding-bottom: 20px;">
-                        Esto quiere decir que la componente de $\vec{PQ}$ a lo largo de $\vec{PR}$ es igual al producto escalar de $\vec{PQ}$ y 
-                        un vector unitario que tiene la misma dirección que $\vec{PR}$.
-                    </p>
-                    <span></span>
+                <section id="prod-vec">
+                    <h5 class="titulo">Producto vectorial</h5>
                     <p class="texto-18">
-                        Finalmente si $a$ y $b$ son dos vectores en $R^{3}$ con $b$ $\not =0$. La componente de $a$ a lo largo de $b$ se denota por $comp_{b}a$ y se define por: $$comp_{b}a = a \cdot \frac{1}{||b||}b$$</p>
-                   </div>
-                   
-                   <div class="contenedor-derecho">
-                    <iframe src="https://www.geogebra.org/classic/nek2fy2d?embed" width="500" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
-                   </div>
-
-               </div>
-            </section>       
+                        El producto vectorial $\textbf{a}$ $\times$ $\textbf{b}$ de dos vectores en $R^{3}$ ya no es un escalar; es un nuevo vector. 
+                        Al trabajar con productos vectoriales es conveniente usar determinantes. Un determinante de de orden 2 se define por:
+                    </p>
+                    <p class="texto-18">
+                        $$\begin{vmatrix}
+                            a_1 & a_2 \\ 
+                            b_1 & b_2 \\ 
+                        \end{vmatrix}=a_1 b_2-a_2 b_1
+                        $$
+                    </p>
+                    <p class="texto-18"> 
+                        Los determinantes exhiben una propiedad que es el intercambio de dos renglones lo que modifica el signo del determinante. 
+                        Entonces el producto vectorial de $\textbf{a}$ $\times$ $\textbf{b}$ de $a =< a_1,a_2,a_3>$ y $b=< b_1,b_2,b_3>$ es:
+                    </p>
+                    <p class="texto-18">
+                        $$\textbf{a} \times \textbf{b} =
+                            \begin{vmatrix}
+                                a_2 & a_3 \\ 
+                                b_2 & b_3 \\ 
+                                \end{vmatrix}i - 
+                                \begin{vmatrix}
+                                a_1 & a_3 \\ 
+                                b_1 & b_3 \\ 
+                                \end{vmatrix}j+
+                                \begin{vmatrix}
+                                a_1 & a_2 \\ 
+                                b_1 & b_2 \\ 
+                            \end{vmatrix}k
+                        $$
+                    </p>
+                </section>
+                <section>
+                    <h5 class="titulo">Producto vectorial</h5>
+                    <div class="contenedor-izquierdo">
+                        <p class="texto-18">
+                            Lo anterior sugiere que el producto vectorial se denote de la siguiente forma:
+                        </p>
+                        <p class="texto-18">
+                            $$\textbf{a} \times \textbf{b} =
+                                \begin{vmatrix}
+                                    i & j & k \\
+                                    a_1 & a_2 & a_3 \\ 
+                                    b_1 & b_2 & b_3 \\ 
+                                \end{vmatrix} 
+                            $$
+                        </p>
+                        <p class="texto-18">
+                            Una propiedad <strong>importante</strong> del producto vectorial es que el vector $\textbf{a} \times \textbf{b}$ es ortogonal a $\textbf{a}$ y $\textbf{b}$, 
+                            puesto que al operar $\textbf{a} \times \textbf{b} \cdot a = 0 $ y $\textbf{a} \times \textbf{b} \cdot b = 0$.
+                        </p>
+                        <p class="texto-18">
+                            <strong>Ejercicio</strong> Encuentre $\textbf{a} \times \textbf{b}$ para $a = < 2,-1,6>$ y $b = <-3,5,1>$ y grafiquelo.
+                        </p>
+                    </div>
+                    <div class="contenedor-derecho">
+                        <iframe src="https://www.geogebra.org/3d/ngenf28d?embed" width="500" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                    </div>
+                </section>
+                <section id="impli">
+                    <h5 class="titulo">Implicaciones del producto vectorial</h5>
+                    <p class="texto-18">
+                        Geométricamente para que exista un tercer vector construido por el producto cruz de $\textbf{a} \times \textbf{b}$  estos dos vectores deben:
+                    </p>
+                    <ul>
+                        <li class="items texto-18">Ser diferentes de cero.</li>
+                        <li class="items texto-18">No ser paralelos.</li>
+                        <li class="items texto-18">Compartir el punto inicial.</li>
+                    </ul>
+                    <p class="texto-18">
+                        Si $\alpha$ es el ángulo entre dos vectores $\textbf{a}$ y $\textbf{b}$ diferentes de cero entonces:
+                    </p>
+                    <p class="texto-18">
+                        $$||a \times b|| = ||a|||b|| sen\alpha$$
+                    </p>
+                    <p class="texto-18">
+                        Dos vectores son paralelos si y sólo si $\textbf{a} \times \textbf{b} = 0$.
+                    </p>
+                </section>
+                <section id="int-geom">
+                    <h5 class="titulo">Interpretación geométrica</h5>
+                    <div>
+                        <div class="contenedor-izquierdo">
+                            <p class="texto-18">
+                                Para realizar una interpretación geométrica de $||a \times b||$, 
+                                a continuación se presenta $\textbf{a}$ y $\textbf{b}$ por vectores $\vec{PQ}$ y $\vec{PR}$ con el mismo punto inicial $P$.
+                            </p>
+                            <p class="texto-18">
+                                Sea $S$ el punto tal que los segmentos $PQ$ y $PR$ son lados adyacentes a un paralelogramo con vértices $P, Q, R$ y $S$.
+                            </p>
+                            <p class="texto-18">
+                                Sea $S$ el punto tal que los segmentos $PQ$ y $PR$ son lados adyacentes a un paralelogramo con vértices $P, Q, R$ y $S$.
+                            </p>
+                            <p class="texto-18">
+                                Una de las alturas del paralelogramo es $||b|| sen\alpha$ y por lo tanto, el área es $||a||||b|| sen\alpha$. 
+                                Se infiere que la magnitud del producto vectorial $\textbf{a} \times \textbf{b}$ es igual al área del paralelogramo determinado por $\textbf{a}$ y $\textbf{b}$.
+                            </p>
+                        </div>
+                        <div class="contenedor-derecho">
+                            <iframe src="https://www.geogebra.org/classic/ajaxy5pq?embed" width="500" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </section>
+                <section id="prod-vec-unt">
+                    <h5 class="titulo">Productos vectoriales unitarios</h5>
+                    <div>
+                        <div class="contenedor-izquierdo">
+                            <p class="texto-18">
+                                Es importante conocer los productos vectoriales de los vectores unitarios especiales $\textbf{i, j}$ y $\textbf{k}$. 
+                                Se pueden demostrar las siguientes igualdades:
+                            </p>
+                            <ul>
+                                <li class="texto-18 items">$i \times j = k$</li>
+                                <li class="texto-18 items">$j \times i = -k$</li>
+                                <li class="texto-18 items">$j \times k = i$</li>
+                                <li class="texto-18 items">k \times j = -i$</li>
+                                <li class="texto-18 items">$k \times i = j$</li>
+                                <li class="texto-18 items">$i \times k = -j$</li>
+                            </ul>
+                            <p class="texto-18">Aplique sus conocimientos y compruebe las igualdades en el geogebra.</p>
+                        </div>
+                        <div class="contenedor-derecho">
+                            <iframe src="https://www.geogebra.org/3d/fcqtvetc?embed" width="500" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </section>
+            </section>      
             <section id="ref">
                 <h5 class="titulo">Referencias</h5>
                 <p class="texto-22">Swokowski, E. W. (2017). Cálculo con Geometría Analítica. Grupo Editorial Iberoamérica.</p>
