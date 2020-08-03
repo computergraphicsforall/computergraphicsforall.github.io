@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Computación gráfica -->
+        <!-- Jorge Victorino, Miguel Barrero-->
+        <title>Vectores en Three.js</title>
+        <!--Configuracion meta-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        
+        <!-- Recursos basicos de three.js -->
+        <!-- La ruta de estos recursos son relativos dependiendo en donde usted los tenga -->
+        <script type="text/javascript" src="../projects/three.js/build/three.js"></script>
+	    <script type="text/javascript" src="../projects/three.js/examples/js/controls/OrbitControls.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            
+            // Declaración de variables para la escena.
+            var camera, scene, axes, renderer, controlsScene;
+
+            // Invocación de funciones.
+            initScene();
+            animate();
+            gui();
+            
+            // Función para configurar todos los elementos iniciales de una escenga en 3D. 
+            function initScene() {
+
+                // Instancia de objetos Three.js: la cámara, la escena, los ejes del sistema de coordenadas y el render.
+                camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+                scene = new THREE.Scene();
+                axes = new THREE.AxesHelper(5);
+                renderer = new THREE.WebGLRenderer({antialias:true});
+                
+                // Configuración básica del espacio para renderizar la escena.
+                renderer.setSize(window.innerWidth, window.innerHeight);
+			    renderer.setClearColor(0xFFFFFF);
+
+                // Configuración de la posición de la cámara y la dirección a donde apunta.
+                camera.position.x = 10;
+			    camera.position.y = 5;
+			    camera.position.z = 15;
+                camera.lookAt(0,0,0);
+
+                // Añadiendo los elementos a la escena.
+                scene.add(axes);
+
+                // Configuración de controles rotación y traslación sobre la escena.
+                controlScene = new THREE.OrbitControls(camera, renderer.domElement);
+			    controlScene.addEventListener('change', render);
+			    controlScene.minDistance = 20;
+			    controlScene.maxDistance = 500;
+
+                // Objetos de la escena
+
+                var vector1 = new THREE.ArrowHelper(new THREE.Vector3(2, 2, 0).normalize(), new THREE.Vector3(0, 0, 0), 5, 0x00ff00);
+                //sscene.add(vector1);
+
+                // Añadiendo la escena con sus elementos al espacio proporcionado por el navegador.
+                document.body.appendChild(renderer.domElement);
+
+
+            }
+
+            // Función que renderiza los elementos que se encuentran dentro de la función initScene para que puedan ser visualiados.
+
+            function render() {
+
+                renderer.render(scene, camera);
+            }
+
+            // Funcion que genera un loop para crear y reproducir una animación en un elemento.
+            function animate() {
+
+                requestAnimationFrame(animate);
+                render();
+            }
+
+
+            // Función para agregar controles de interfaz de usuario (botones, checkbox, radiobuttons) que generen cambios en la escena.
+            function gui() {
+
+            }
+
+        </script>
+    </body>
+</html>
