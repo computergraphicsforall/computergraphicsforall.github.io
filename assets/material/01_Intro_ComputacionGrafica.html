@@ -44,18 +44,15 @@
                 <h4>Agenda</h4>
                 </br>
                 <ul>
-                    <li class="agenda"><a href="#defvector">1</a></li>
-                    <li class="agenda"><a href="#evectoriales">2</a></li>
-                    <li class="agenda"><a href="#subespacio">3</a></li>
-                    <li class="agenda"><a href="#comblineal">4</a></li>
-                    <li class="agenda"><a href="#dep-indep-lineal">5</a></li>
-                    <li class="agenda"><a href="">6</a></li>
-                    <li class="agenda"><a href="">Referencias</a></li>
+                    <li class="agenda"><a href="#ccg">Curso de computación gráfica</a></li>
+                    <li class="agenda"><a href="#cc"> Introducción a Computacion Gráfica</a></li>
+                    <li class="agenda"><a href="#app">Aplicaciones</a></li>
+                    <li class="agenda"><a href="#prj">Proyectos</a></li>
                 </ul>
             </section>
 
             <section>
-                <section id="defvector">
+                <section id="ccg">
                     <h5 class="titulo">Recursos</h5>
                     <p class="texto-22">Página del curso: <a href="https://computergraphicsforall.github.io/">https://computergraphicsforall.github.io/</a></p>
                     <iframe src="https://computergraphicsforall.github.io/" width="800" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
@@ -63,94 +60,120 @@
                 <section>
                     <h5 class="titulo">Reglas del curso</h5>
                     <p class="texto-22">Documentos del curso:</p>
-                    <<ul>
-                        <li class="block-items-math">Sylabus</li>
-                        <li class="block-items-math">Programación de desarrollo de la asignatura PDA </li>
+                    <ul style="text-align: left">
+                        <li class="block-items-math"><a href="https://computergraphicsforall.github.io/assets/documents/Silabo-Computacion%20Grafica.pdf">Sylabus computación gráfica UCentral</a></li>
+                        <li class="block-items-math"><a href="https://computergraphicsforall.github.io/assets/documents/PDA_computacionGrafica_2020-2%20-%20pda_v2.pdf">Programación de desarrollo de la asignatura PDA </a></li>
                     </ul>
                     <p class="texto-22">Inicio de la clase a la hora pactada, se recomienda conectarse 10 minutos antes</p>
+                    <p class="texto-22"></p>
+                    <p class="texto-22">Calificaciones</p>
+                    <div class="contenedor-izquierdo" style="width: 30%">
+                        <p class="texto-18"><b>Corte 1</b></p>
+                        <p class="texto-18">Parcial (50%)</p>
+                        <p class="texto-18">Trabajo en clase (40%)</p>
+                        <p class="texto-18">Participación (10%)</p>
+                    </div>
+                    <div class="contenedor-izquierdo" style="width: 30%">
+                        <p class="texto-18"><b>Corte 2</b></p>
+                        <p class="texto-18">Parcial (50%)</p>
+                        <p class="texto-18">Trabajo en clase (40%)</p>
+                        <p class="texto-18">Participación (10%)</p>
+                    </div>
+                    <div class="contenedor-izquierdo" style="width: 30%">
+                        <p class="texto-18"><b>Corte 1</b></p>
+                        <p class="texto-18">Proyecto (60%)</p>
+                        <p class="texto-18">Exposición (25%)</p>
+                        <p class="texto-18">Participación (15%)</p>
+                    </div>
                 </section>
             </section>
 
-
-            <section id="evectoriales">
-                <h5 class="titulo">Espacios vectoriales</h5>
-                <p class="texto-22"> Un espacio vectorial es un conjunto no vacío $V$ de objetos, llamados 
-                <strong>vectores</strong> en el que se ha definido dos operaciones: <strong>la suma</strong> y el <strong>producto por un escalar</strong> (número real) y que se encuentran sujetos a los siguientes axiomas.</p> 
-                <div class="block-items-math">
+            <section>
+                <section id="cg"><h2>COMPUTACIÓN GRÁFICA</h2></section>
+                <section>
+                    <h5 class="titulo">Definición</h5>
+                    <p class="texto-22">La computación gráfica es una rama de la informática que se ocupa de generar imágenes con la ayuda de las computadoras.</p>
+                    <img src="https://image.slidesharecdn.com/computacingrfica-121219210802-phpapp02/95/computacin-grfica-1-638.jpg?cb=1355951618"></img>
+                </section>
+                <section id="defvector">
+                    <h5 class="titulo">Componentes de un sistema gráfico</h5>
+                    <img src="https://developer.nvidia.com/sites/default/files/pictures/2018/RayTracing/ray-tracing-image-1.jpg"></img>
+                </section>
+                <section id="defvector">
+                    <h5 class="titulo">Representación</h5>
+                    <p class="texto-22">La información gráfica se puede representar como multiples arreglos de vértices y un conjunto de imágenes (texturas)</p>
+                    <img src="https://artificialnature.net/gct633/img/GL_GeometricPrimitives.png"></img>
+                </section>
+                <section id="defvector">
+                    <h5 class="titulo">Ensamblaje de un sistema gráfico</h5>
+                    <img src="img/pipeline.png"></img>
+                </section>
+                <section>
+                    <h5 class="titulo">Tecnologías</h5>
                     <ul>
-                        <li class="block-items-math">$u+v = v+u$</li>
-                        <li class="block-items-math">$u+v \in V$</li>
-                        <li class="block-items-math">$(u+v)+w = u+(v+w)$</li>
-                        <li class="block-items-math">Existe un vector nulo $0_v\in V $ tal que $ v+0_v = v$</li>
-                        <li class="block-items-math">Para cada $v$ en $V$, existe un opuesto $(-v)\in V$ tal que $v+(-v)= 0_v$</li>
-                        <li class="block-items-math">$\alpha v \in V$</li>
-                        <li class="block-items-math">$\alpha (u+v) = \alpha u + \alpha v$</li>
-                        <li class="block-items-math">$(\alpha + \beta)v = \alpha v + \beta v$</li>
-                        <li class="block-items-math">$\alpha (\beta v) = (\alpha \beta)v$</li>
-                        <li class="block-items-math">$1v = v$</li>
+                        <li class="fragment">OpenGL 2</li>
+                        <li class="fragment">OpenGL 4.3 shaders</li>
+                        <li class="fragment">OpenGL OpenFrameworks</li>
+                        <li class="fragment">WebGL</li>
+                        <li class="fragment">Three.js + D3</li>
                     </ul>
-                </div>
-            </section>
-            <section id="subespacio">
-                <h5 class="titulo">Sub espacios vectoriales</h5>
-                <p class="texto-22">Sea $V$ un espacio vectorial y $W$ un subconjunto no vacío de $V$. $W$ es un <strong>sub espacio</strong> de $V$</p>
-                </br>
-                <div class="block-items-math">
-                    <ul>
-                        <li class="block-items-math">si $u,v \in W$, entonces $u+v \in W$</li>
-                        <li class="block-items-math">si $a \in V$ y $u \in W$, entonces $au \in W $</li>
-                    </ul>
-                </div>
-                </br>
-                <p class="texto-22">Ejemplo: $W=\left\lbrace(x,y)\in R^{2} / x=0\right\rbrace$</p>
+
+                </section>
             </section>
 
-            <section id="comblineal">
-                <h5 class="titulo">Combinación lineal</h5>
-                <div>
+            <section>
+                <section id="app"><h2>APLICACIONES</h2></section>
+                <section> 
+                    <h5 class="titulo">Diseño CAD/CAM y promoción</h5>
                     <div class="contenedor-izquierdo">
-                        <p class="texto-22">Sean $v_1, v_2, v_3,...v_r$ de un espacio vectorial $V$; se dice que $w$ es una combinación lineal de los vectores  $v_1, v_2, v_3,...v_r$ si:</p>
-                        <span class="texto-22">$$w= k_1v_1+k_2v_2+...k_rv_r$$</span>
-                        <p class="texto-22">Donde $k_1,k_2,...k_r$ son escalares.</p>
-                        <p class="texto-22"> <strong>Ejemplo:</strong>¿El vector $(1,0,4)$ sería una combinación lineal de los vectores $(1,0,1)$ y $(0,0,2)$?</p>
-                    </div>
+                    <iframe src="https://threejs.org/examples/webgl_loader_3ds.html" width="800" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe> </div>    
                     <div class="contenedor-derecho">
-                        <iframe src="https://www.geogebra.org/3d/y8fsjseh?embed" width="800" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
-                    </div>
-                </div>
-                </br>
-            </section>
-            <section id="dep-indep-lineal">
-                <section>
-                    <h5 class="titulo">Dependencia e independencia lineal</h5>
-                    <p class="texto-22">Un conjunto de vectores $\left\lbrace v_1, v_2, v_3,...v_r\right\rbrace$ de un espacio vectorial $V$ es <strong>dependiente</strong> 
-                        si y solo si al menos uno de los vectores puede expresarse como una combinación lineal del otro. 
-                        Si el conjunto  $\left\lbrace v_1, v_2, v_3,...v_r\right\rbrace$ es linealmente dependiente admite otras soluciones además de la trivial. 
-                        Esto quiere decir que al menos uno de los escalares distinto de cero [Isabel Pustilnik, 2017].
-                    </p>
-                    </br>
-                    <p class="texto-22">
-                        <strong>Ejemplo: </strong>Es el conjunto $\left\lbrace (1,0,0),(0,1,0),(1,1,1)\right\rbrace$ linealmente independiente (LI) o linealmente dependiente (LD)?
-                    </p>
-                    <p class="texto-22">
-                        <strong>Ejemplo: </strong>¿Es el conjunto $\left\lbrace (1,1),(1,-1),(2,0)\right\rbrace$ linealmente independiente (LI) o linealmente dependiente (LD)?
-                    </p> 
+                    <iframe src="https://threejs.org/examples/webgl_loader_collada_kinematics.html" width="800" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe> </div>    
+                    
                 </section>
-                <section>
-                    <h6 class="titulo">Ejemplos</h5>
-                        <div class="contenedor-izquierdo">    
-                            <p class="texto2">
-                                Ahora considere los vectores de la gráfica. Si se tienen dos vectores $v_1$ y $v_2$ en 2D, se dice que son LD si y solo si uno de ellos es un múltiplo escalar del otro [Isabel Pustilnik, 2017].
-                                $v_1$ y $v_2$ son LD si y solo si uno de ellos es un múltiplo escalar del otro [Isabel Pustilnik, 2017].
-                            </p>
-                        </div>
-                        <div class="contenedor-derecho">
+                <section> 
+                    <h5 class="titulo">Simulación de efectos de luz en tiempo real</h5>
+                    <iframe src="https://threejs.org/examples/webgl_materials_cubemap_balls_refraction.html" width="800" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>                    
+                </section>
+                <section> 
+                    <h5 class="titulo">Simulación de materiales</h5>
+                    <iframe src="https://threejs.org/examples/webgl_materials_envmaps_exr.html" width="800" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>                    
+                </section>
+                <section> 
+                    <h5 class="titulo">Animación, efectos especiales</h5>
+                    <iframe src="https://threejs.org/examples/webgl_animation_skinning_blending.html" width="800" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>                    
+                </section>
+                <section> 
+                    <h5 class="titulo">Animación, captura de movimiento</h5>
+                    <iframe src="https://threejs.org/examples/webgl_animation_keyframes.html" width="800" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>                    
+                </section>
+                <section> 
+                    <h5 class="titulo">Simulación física</h5>
+                    <iframe src="https://threejs.org/examples/webgl_marchingcubes.html" width="800" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>                    
+                </section>
+                <section> 
+                    <h5 class="titulo">Navegación interactiva</h5>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d38.073198278900236!2d-86.74479623795916!3d21.133547714454913!2m3!1f225.00000000000122!2f77.10538311820974!3f0!3m2!1i1024!2i768!4f35!5e1!3m2!1ses-419!2sco!4v1595883293312!5m2!1ses-419!2sco" width="800" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>                    
+                </section>
+                <section> 
+                    <h5 class="titulo">Análisis visual interactivo</h5>
+                    <iframe src="https://codepen.io/plotly/pen/WwXEoV" width="800" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>                    
+                </section>
+            </section>
 
-                        </div>
+            <section>
+                <section id="prj"><h2>PROYECTOS EN CURSO</h2></section>
+                <section> 
+                    <h5 class="titulo">Descubrimiento automático de categorías</h5>
+                    <iframe src="https://computergraphicsforall.github.io/assets/projects/leaves/leaves.html" width="800" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>                    
+                </section>
+                <section> 
+                    <h5 class="titulo">Simulación de vientos</h5>
+                    <iframe src="https://computergraphicsforall.github.io/assets/projects/wind/mapa.html" width="800" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>                    
                 </section>
             </section>
             <section>
-
+                <h1>Gracias !!!</h1>
             </section>
         </div>
     </div>
