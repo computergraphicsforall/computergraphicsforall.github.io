@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+
+<head>
+    
+    <!--Meta configuration-->
+    <meta charset='utf-8'>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Rectas y planos</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="reveal.js-master/dist/reveal.js"></script>
+    <script type="text/javascript" src="reveal.js-master/plugin/math/math.js"></script>
+    <link rel="stylesheet" href="reveal.js-master/dist/reset.css" />
+    <link rel="stylesheet" href="reveal.js-master/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal.js-master/dist/theme/black.css" id="theme"/>
+    <link rel="stylesheet" href="reveal.js-master/plugin/highlight/monokai.css" id="highlight-theme"/>
+    <link rel="stylesheet" href="estilos.css"/>
+</head>
+
+<body id="presentation">
+    <div class="reveal">
+        <div class="slides">
+
+            <!--Presentación-->
+            <section>
+                <h3>Rectas y planos</h3>
+                <p>Computación gráfica</p>
+                </br>
+                <span class="prof">Jorge Victorino<sup>1, 2</sup>, Miguel Barrero<sup>1</sup></span>
+                </br>
+                <span class="email">jvictorinog@ucentral.edu.co, mbarrerop@ucentral.edu.co</span>
+                </br>
+                <span class="instituciones"><sup>1</sup>Universidad Nacional, <sup>2</sup>Universidad Central</span>
+                <span class="instituciones">2020</span>
+            </section>
+
+            <!--Contenido de la presentación-->
+            <section>
+                <h4>Agenda</h4>
+                </br>
+                <ul>
+                    <li class="agenda"><a href="#rectas">Rectas</a></li>
+                    <li class="agenda"><a href="#planos">Planos</a></li>
+                    <li class="agenda"><a href="#ref">Referencias</a></li>
+                </ul>
+            </section>
+
+            <!--Contenido de la presentación-->
+            <section>
+                <section id="rectas">
+                    <h5 class="titulo">Rectas</h5>
+                    <div>
+                        <div class="contenedor-izquierdo">       
+                            <p class="texto-18">
+                                El enfoque de las rectas para el temario se orienta al paralelismo y la ortogonalidad.
+                            </p>
+                            <p class="texto-18"> 
+                                Sea $a = < a_1,a_2,a_3 >$ un vector diferente de cero en $R^{3}$, $P_1(x_1,y_1,z_1)$ un punto arbitrario, y $\vec{OA}$ el vector posición de $\textbf{a}$ [Swoskowski, 2017]:
+                            </p>
+                            <p class="texto-18">
+                                La recta $l$ que pasa por $P_1(x_1,y_1,z_1)$ $\textbf{y es paralela}$ a $\textbf{a}$ se define como el conjunto de todos los puntos $P(x,y,z)$ tales que $\vec{P_1P}$ es paralelo a $\vec{OA}$.
+                            </p>
+                            <p class="texto-18">
+                                Esto quiere decir que $\vec{P_1P} = t\vec{OA}$ para un escalar $\textbf{t}$.
+                            </p>
+                        </div>
+                        <div class="contenedor-derecho">
+                            <iframe src="https://www.geogebra.org/3d/sy5mndaf?embed" width="500" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                        </div> 
+                    </div>
+                </section>
+                <section>
+                    <h5 class="titulo">Rectas</h5>
+                    <p class="texto-18">
+                        En términos de vectores en  $R^{3}$:  
+                        $< x-x_1, y-y_1,z-z_1> =$ $t< a_1,a_2,a_3> =$ $< a_1 t,a_2 t,a_3 t>$
+                    </p>
+                    <p class="texto-18"> 
+                        Entonces la recta que pasa por $P_1(x_1,y_1,z_1)$ y es paralela a $a = < a_1,a_2,a_3 >$ tiene las ecuaciones paramétricas:
+                        $$ x =x_1+a_1t , y =y_1+a_2t, z =z_1+a_3t$$
+                        
+                    </p>
+                
+                    <iframe src="https://www.geogebra.org/3d/sy5mndaf?embed" width="600" height="380" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                </section>
+                <section>
+                    <h5 class="titulo">Rectas</h5>
+                    <p class="texto-18">
+                        Si $l_1$ y $l_2$ son rectas paralelas a los vectores  $a = < a_1,a_2,a_3>$ y  $b = < b_1,b_2,b_3>$, se puede decir que los ángulos entre $l_1$ y $l_2$ son $\alpha$ y $\pi - \alpha$ donde $\alpha$ es el ángulo entre $\textbf{a}$ y $\textbf{b}$.
+                    </p>
+                    <p class="texto-18">
+                        <strong>Ejercicio: </strong> Encuentre el ángulo entre los vectores directores de las rectas y las ecuaciones paramétricas.
+                    </p>
+                    <iframe src="https://www.geogebra.org/3d/wexb7tcs?embed" width="800" height="470" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                </section>
+                <section>
+                    <h5 class="titulo">Rectas</h5>
+                    <div class="contenedor-izquierdo">
+                        <p class="texto-18">
+                            Si $P_1(x_1,y_1,z_1)$ es un punto sobre la recta $l$, \textbf{entonces el plano que pasa por} $P_1$ y 
+                            tiene la recta normal $l$ se define como el conjunto de los puntos que se encuentran en todas las rectas $l'$, que son perpendiculares a $l$ en $P_1$.
+                        </p>
+                        <p class="texto-18">
+                            Para mayor claridad, usando vectores, se escoge un punto $P_2$ de $l$ y se considera al segmento dirigido $\vec{P_1P_2}$ como el vector normal al plano que pasa por $P_1$. Se dice que el plano con vector normal $\vec{P_1P_2}$ contiene 
+                            todos los puntos P tales que $\vec{P_1P}$ es ortogonal a $\vec{P_1P_2}$. P está en el plano si y solo si $\vec{P_1P_2} \cdot \vec{P_1P} = 0$.
+                        </p>
+                    </div>
+                    <div class="contenedor-derecho">
+                        <iframe src="https://www.geogebra.org/3d/qcdeqdsc?embed" width="500" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                    </div>
+                    
+                </section>               
+            </section>
+            <section>
+                <section>
+                    <h5 class="titulo">Planos</h5>
+                    <div class="contenedor-izquierdo">
+                        <p class="texto-16">
+                            El plano que pasa por $P_1(x_1,y_1,z_1)$ con vector normal $a =< a_1,a_2,a_3>$, tiene como ecuación: $$a_1(x-x_1)+a_2(y-y_1)+a_3(z-z_1)=0$$
+                        </p>
+                        <p class="texto-16" style="float: left; text-align: left;">
+                            La ecuación del plano de forma general se puede escribir de la forma: 
+                            $$ax+by+cz+d=0$$ donde $a = a_1 , b = b_1 , c = c_1$ y $d = -a_1 x_1 -a_2 y_1 - a_3 z_1$ o bien: $$ax+by+cz -a_1 x_1 -a_2 y_1 - a_3 z_1 = 0$$
+                        </p>
+                        <p class="texto-16">
+                            <strong>Ejercicio: </strong>  Encuentre una ecuación del plano que pasa por el punto $(5,-2,2)$ y tiene el vector normal $a=< 1, 3, 3>$.
+                            Use geogebra para graficar el plano usando la calculadora.
+                        </p>
+                        <p class="texto-16">
+                            <strong>Ejercicio: </strong>  Encuentre una ecuación del plano, determinada por los puntos $P(4,-3,1), Q(6,-4,7)$ y $R(1,2,2)$.
+                            Use geogebra para graficar el plano usando la calculadora.
+                        </p>
+                    </div>
+                    <div class="contenedor-derecho">
+                        <iframe src="https://www.geogebra.org/3d/bnzatmvz?embed" width="500" height="550" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                    </div>
+                </section>
+                <section>
+                    <h5 class="titulo">Planos</h5>
+                    <p class="texto-18">
+                        $\textbf{La gráfica de toda ecuación lineal}$ $ax+by+cz+d=0$ $\textbf{es un plano con vector normal}$ $a,b,c$.
+    
+                        <span>Dos planos con vectores normales $\textbf{a}$ y $\textbf{b}$, respectivamente son:</span>
+                        
+                        <ul>
+                            <li class="items texto-18">$\textbf{paralelos}$ si  $\textbf{a}$ y $\textbf{b}$ son paralelos.</li>
+                            <li class="items texto-18">$\textbf{ortogonales}$ si  $\textbf{a}$ y $\textbf{b}$ son ortogonales.</li>
+                        </ul>
+                            
+                            
+                        
+                    </p>
+                </section>
+            </section>
+
+            <section id="ref">
+                <h5 class="titulo">Referencias</h5>
+                <p class="texto-22">Swokowski, E. W. (2017). Cálculo con Geometría Analítica. Grupo Editorial Iberoamérica.</p>
+            </section>
+        </div>
+    </div>
+    <script src="reveal.js-master/dist/reveal.js"></script>
+    <script src="reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+
+            controls: true,
+            postMessage: true,
+            slideNumber: true,
+            hash: true,
+            transition: 'convex',
+            progress: true,
+            keyboard: true,
+            math: {
+                mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+                config: 'TeX-AMS_HTML-full',
+                // pass other options into `MathJax.Hub.Config()`
+                TeX: { Macros: { RR: "{\\bf R}" } }
+            },
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
+        });
+    </script>
+</body>
+
+</html>
